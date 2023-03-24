@@ -8,9 +8,24 @@ Project Source: https://github.com/henrywhitaker3/Speedtest-Tracker
 ## Setup:
 - Edit your Cradlepoint router configuration and navigate to System > Containers > Projects and click Add.  
 - Give your project a name ("Speedtest-Tracker") and click on the Compose tab.
-- Paste the contents of the docker-compose file into the compose tab of your project and click save.
+- Paste the following docker-compose (YAML) into the compose tab of your project and click save.
 
-![image](https://user-images.githubusercontent.com/127797701/226963581-e4f081b3-865b-486e-8064-1d13828b6106.png)
+```yaml
+version: '2.4'
+services:
+  speedtest:
+    image: henrywhitaker3/speedtest-tracker:dev-arm
+    ports:
+     - 8000:80
+    volumes:
+     - data:/config
+    environment:
+     - OOKLA_EULA_GDPR=true
+    restart: unless-stopped
+volumes:
+  data:
+    driver: local
+```
 
 ## Usage:  
 - Use NCM Remote Connect LAN Manager to create a profile for "Speedtest-Tracker" at 127.0.0.1 port 8000 protocol HTTP.
