@@ -1,5 +1,7 @@
 # speedtest-tracker
-This container runs a speedtest every hour and graphs the results. The back-end is written in Laravel and the front-end uses React. It uses Ookla's Speedtest cli to get the data and uses Chart.js to plot the results.
+This project runs the henrywhitaker3/speedtest-tracker container which runs a speedtest every hour and graphs the results. The back-end is written in Laravel and the front-end uses React. It uses Ookla's Speedtest cli to get the data and uses Chart.js to plot the results.
+
+Docker Homepage: https://hub.docker.com/r/henrywhitaker3/speedtest-tracker 
 
 Project Source: https://github.com/henrywhitaker3/Speedtest-Tracker
 
